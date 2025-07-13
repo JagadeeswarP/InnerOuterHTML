@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Demo with User Input</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #box { border: 2px solid #007bff; padding: 15px; margin-bottom: 10px; }
+    button, input { margin-right: 10px; padding: 8px 12px; }
+    input { width: 300px; }
+  </style>
+</head>
+<body>
+
+  <h2>DOM Manipulation with User Input</h2>
+
+  <input id="userInput" type="text" placeholder="Type something..." />
+  <br><br>
+
+  <div id="box">
+    <p>Hello <strong>World</strong></p>
+  </div>
+
+  <button onclick="changeInnerHTML()">Use innerHTML</button>
+  <button onclick="changeOuterHTML()">Use outerHTML</button>
+  <button onclick="removeBox()">Remove Box</button>
+
+  <script>
+    function changeInnerHTML() {
+      const box = document.getElementById("box");
+      const input = document.getElementById("userInput").value;
+      box.innerHTML = `<h3> Are you ${input}!!</h3>`;
+    }
+
+    function changeOuterHTML() {
+      const box = document.getElementById("box");
+      const input = document.getElementById("userInput").value;
+      box.outerHTML = `<section id="box"><h3>Yes I am ${input}!!</h3></section>`;
+    }
+
+    function removeBox() {
+      const box = document.getElementById("box");
+      box.remove();
+    }
+  </script>
+
+</body>
+</html>
