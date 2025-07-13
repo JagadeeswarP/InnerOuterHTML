@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Demo</title>
+  <style>
+    body { font-family: sans-serif;  padding: 20px; }
+    #box { border: 2px solid #007bff; padding: 15px; margin-bottom: 10px; }
+    button { margin-right: 10px; padding: 8px 12px; }
+  </style>
+</head>
+<body>
+
+  <h2>DOM Manipulation Demo</h2>
+
+  <div id="box">
+    <p>Hello <strong>World</strong></p>
+  </div>
+
+  <button onclick="changeInnerHTML()">I am </button>
+  <button onclick="changeOuterHTML()">outerHTML</button>
+  <button onclick="removeBox()">remove()</button>
+
+  <script>
+    function changeInnerHTML() {
+      const box = document.getElementById("box");
+      box.innerHTML = "<h3>I am Jagadeeswar, A Software Developer!!</h3>";
+    }
+
+    function changeOuterHTML() {
+      const box = document.getElementById("box");
+      box.outerHTML = "<section id='box'><h3>Replaced with outerHTML. Oops You Replaced it</h3></section>";
+    }
+
+    function removeBox() {
+      const box = document.getElementById("box");
+      box.remove();
+    }
+  </script>
+
+</body>
+</html>
